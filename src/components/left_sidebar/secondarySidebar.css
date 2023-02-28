@@ -1,0 +1,36 @@
+.secondary__sidebar{
+    margin-top: 20px;
+    padding: 0 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    position: sticky;
+    top: 60px;
+}
+
+.links > div {
+    padding: 5px 0;
+    color : #0a66c2;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.links > div:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.links div:last-child{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.discover > h5{
+    font-weight: 600px;
+    font-size: 16px;
+    text-align: center;
+    color:rgba(0,0,0,0.5);
+    
+}
+
