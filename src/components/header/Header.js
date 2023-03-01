@@ -12,6 +12,7 @@ import PeopleIcon from '@material-ui/icons/People';
 import BusinessCenterIcon  from '@material-ui/icons/BusinessCenter';
 import MessageIcon from '@material-ui/icons/Message';
 import NotificationsIcon from '@material-ui/icons/Notifications';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 
 
@@ -20,7 +21,14 @@ import '../header/Header.css'
 
 
 
-function Header() {
+function Header({loggedOut}) {
+
+function logout(){
+  localStorage.removeItem("userIsLoggedIn");
+  loggedOut();
+}
+
+
   return (
     <div className='header'>
         <div className="header__left">
@@ -40,6 +48,9 @@ function Header() {
             <HeaderOption icon ={<MessageIcon/>} title="Messaging" />
             <HeaderOption icon ={<NotificationsIcon/>} title="Notifications" />
             <HeaderOption avatar ={<Avatar src={profilePicURL} />} title="me"     />
+            <div onClick={logout}>
+            <HeaderOption avatar={<ExitToAppIcon/> } title="Logout" />
+            </div>
 
 
 

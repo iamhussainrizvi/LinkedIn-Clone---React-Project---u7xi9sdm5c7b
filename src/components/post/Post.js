@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState , forwardRef } from 'react'
 import "../post/post.css"
 
 //importing Components
@@ -11,12 +11,13 @@ import RepeatIcon from '@material-ui/icons/Repeat';
 import SendIcon from '@material-ui/icons/Send';
 import { profilePicURL } from '../../public/img';
 
-function Post({name,description,message}) {
+const Post = forwardRef (function Post({name,description,message},ref) {
 
     const [liked, setLiked] = useState(false);
 
   return (
-    <div className='posts'>
+    
+    <div className='posts' ref={ref}>
         
         <div className="post__header">
             <div className="post__header__left">
@@ -55,6 +56,6 @@ function Post({name,description,message}) {
         </div>
     </div>
   )
-}
+})
 
 export default Post

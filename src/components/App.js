@@ -26,7 +26,18 @@ const App = () => {
     document.head.appendChild(link);
   }
 
+  function loggedIn(){
+    setUser(true);
+  }
 
+  function loggedOut(){
+    setUser(false);
+  }
+
+  function updateUserName(name){
+    setUserName(name);
+
+  }
 
   useEffect(()=>{
     
@@ -36,28 +47,19 @@ const App = () => {
     const isLoggedin = localStorage.getItem("userIsLoggedIn");
     // console.log("in app login check");
     if(isLoggedin){
-      updateLoginStatus();
+      loggedIn();
     }
-
 
   })
   
-  function updateLoginStatus(){
-    setUser(true);
-  }
-
-  function updateUserName(name){
-    setUserName(name);
-
-  }
 
   return (
 <>
 
-    { !user?(<SignUp  updateLogin = {updateLoginStatus}  updateUserName={updateUserName} />):(<>
+    { !user?(<SignUp  updateLogin = {loggedIn}  updateUserName={updateUserName} />):(<>
     <div id="main">
       <div className="header__container">
-        <Header/>
+        <Header loggedOut={loggedOut}/>
       </div>
       <div className="body__container">
       

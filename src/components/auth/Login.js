@@ -7,16 +7,15 @@ import "./login.css"
 
 function Login({toggleSignup,updateLogin}) {
 
-function handleLogin(e){
-  e.preventDefault();
+  function handleLogin(e){
+    e.preventDefault();
 
-  const email = document.forms[0].elements[0].value;
-  const password = document.forms[0].elements[1].value;
+    const email = document.forms[0].elements[0].value;
+    const password = document.forms[0].elements[1].value;
 
-
-  const auth = getAuth();
-  signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
     // ...
@@ -32,8 +31,10 @@ function handleLogin(e){
     const errorMessage = error.message;
     console.log(errorCode,errorMessage);
     if(errorCode==="auth/user-not-found"){
-      alert("please sign up first");
+      alert("please enter the registered email ID, if not registered, Sign-up first");
     }
+    else if(errorCode==="auth/wrong-password");
+      alert("please enter the correct password");
   });
   
 }
@@ -47,11 +48,11 @@ function handleLogin(e){
 
           <form action="" onSubmit={handleLogin}>
           
-          <input type="email" name="" id="" placeholder='email' required />
+          <input type="email" name="" id="login_email" placeholder='email' required />
           <br />
 
           
-          <input type="password" name="" id="" placeholder='Password' required />
+          <input type="password" name="" id="login_password" placeholder='Password' required />
           <br />
 
           <div className='buton_container'>

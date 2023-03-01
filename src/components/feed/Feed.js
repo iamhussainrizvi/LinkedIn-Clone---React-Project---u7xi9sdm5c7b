@@ -7,6 +7,7 @@ import { collection, addDoc, getDocs } from "firebase/firestore";
 // importing components
 import { Avatar } from '@material-ui/core'
 import HeaderOption from '../header/HeaderOption'
+import FlipMove from "react-flip-move";
 import Post from '../post/Post'
 // importing icons
 import { profilePicURL } from "../../public/img";
@@ -24,7 +25,7 @@ function Feed({userName}) {
         e.preventDefault();
         try
         {
-            const docRef = await addDoc(collection(db, "users"), {
+            const docRef = await addDoc(collection(db, "users"), { 
                 name:userName,
                 description:"Software engineer || Problem solver",
                 message: input,
@@ -96,17 +97,18 @@ function Feed({userName}) {
         </div>
     </div>
     <div className="post__container">
+            <FlipMove>
             {
-                posts?.map( ({description, message, name},index) => (
+                posts?.map( ({description, message, name, timeStamp}) => (
                     <Post 
-                        key={index}
+                        key={timeStamp}
                         name = {name} 
                         description = {description}
                         message= {message}
-        />
+                    />
                 ))
             }
-
+            </FlipMove>
 
 
         </div>

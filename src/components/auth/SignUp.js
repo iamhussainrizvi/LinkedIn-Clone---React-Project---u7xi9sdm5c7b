@@ -9,7 +9,7 @@ function SignUp({updateLogin, updateUserName}) {
 
 const [signup, setSignup] = useState(false);
 
-function toggleSignup({updateLogin}){
+function toggleSignup(){
     setSignup( prev => !prev);
 }
 
