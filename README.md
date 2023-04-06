@@ -1,20 +1,22 @@
-# boilerplate-react-functional-public
+# Linkedln Clone 
+[visit](https://clone-linkedin-e99b1.web.app/) 
 
-In this app we will be making a Word and Character counter app.
-First there needs to be a <code>textarea</code> element which will take the input
-from user.
+## Description: 
+a social media website where users can make profiles and share content.
 
-Below that element, create 2 divs with id="word-counter" and id="char-counter" respectively.
-#word-counter will show the number of words(empty space is not considered a word) and #char-counter will show the number of characters typed.
+## Technologies used: 
+- React.js, 
+- Javascript, 
+- Material UI, 
+- HTML, 
+- CSS.
 
-Also make an input with id="char-limit-input" which takes a number which is the limit of characters we can type in.
-By default char limit should be 50.
+Sign-up 
+![link-sign-up](https://user-images.githubusercontent.com/99624725/230493674-184fa68a-fe25-4d48-b81d-3218f4074395.png)
 
-And the last input should be a slider input(with id ="fontSize-input") for taking the font size, default and min value should be 16px and max would be 32px.
+Sign-in 
+![link-sign-in](https://user-images.githubusercontent.com/99624725/230493708-4f56cb97-471a-449b-9f97-eae3901e4296.png)
 
-Apply the fontSize property to the textarea element.
+Home
+![link-home](https://user-images.githubusercontent.com/99624725/230493806-d93a324d-bab5-4d15-b9b3-96b5862543fe.png)
 
-
-
-Demo video:-
-<video src="https://d3dyfaf3iutrxo.cloudfront.net/general/upload/e449406acecb4a1186ae9cc77a55933f.mp4" controls autoplay muted>
